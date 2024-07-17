@@ -1,0 +1,42 @@
+﻿<Page x:Class="CommunicationTester.UART_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CommunicationTester"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UART_Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+
+            <StackPanel Orientation="Vertical">
+                <Label Content="Baundrate" Width="80" HorizontalAlignment="Left" Margin="50,30,0,10"/>
+                <ComboBox Width="120" Height="20" HorizontalAlignment="Left" Margin="50,0,10,0" DropDownOpened="BR_Handler" Name="BR_comboBox"/>
+                <Label Content="Com Port" Width="70" HorizontalAlignment="Left" Margin="50,20,0,0"/>
+                <ComboBox Width="120" Height="20" HorizontalAlignment="Left" Margin="50,5,0,0" DropDownOpened="COM_Handler" Name="COM_comboBox"/>
+                <Button Height="25" Width="80" Content="Connect" FontSize="12" HorizontalAlignment="Left" Margin="70,10,0,0" Name="Connect_btn" Click="Connect_Clicked"/>
+        </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Send Message" Margin="50,30,0,10" Width="100" HorizontalAlignment="Left"/>
+                <TextBox Height="20" Width="100" Margin="50,0,10,0" HorizontalAlignment="Left" Name="Send_textBox"/>
+                <Button Content="Send" Height="25" Width="80" Margin="58,10,10,0" FontSize="12" HorizontalAlignment="Left" Click="Send_Btn_Clicked"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="2">
+            <StackPanel>
+            <Label Content="Get Message" Margin="50,30,0,10" Width="100" HorizontalAlignment="Left"/>
+            <ListBox Height="150" Width="100" Margin="50,0,10,0" HorizontalAlignment="Left" Name="Get_listBox"/>
+            <Button Content="Get" Height="25" Width="80" Margin="58,10,10,0" FontSize="12" HorizontalAlignment="Left" Click="Get_Btn_Clicked"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
